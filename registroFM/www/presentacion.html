@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+
+      <div class="container" >
+        <div class="row">
+          <div class="col s12">
+            <p>Esta app esta diseñada originalmente para el registro de voluntarios del Festival Matemático del Instituo de Matemáticas, UNAM.</p>
+            <p>Si ya tienes un registro previo puedes iniciar sesión y empezar a utilizarla.</p>
+            <p>Si aún no tienes el registro envía un correo a <a href="mailto:admon.festmatematico@gmail.com">admon.festmatematico@gmail.com</a> para que te demos los pasos a seguir.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s4 offset-s4">
+            <a class="waves-effect waves-light btn" id="acceder" onclick="acceder()">Acceder</a>
+          </div>
+        </div>
+      </div>
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyAF3HsFHQk8hkgdxPqgSqiBjlQl-D0w26Q",
+              authDomain: "registrofestmat.firebaseapp.com",
+              databaseURL: "https://registrofestmat.firebaseio.com",
+              projectId: "registrofestmat",
+              storageBucket: "registrofestmat.appspot.com",
+              messagingSenderId: "357200751307"
+            };
+            firebase.initializeApp(config);
+        </script>
+
+      <script type="text/javascript">
+        function acceder(){
+          var provider = new firebase.auth.GoogleAuthProvider();
+
+          firebase.auth().getRedirectResult().then(function(result) {
+            if (result.credential) {
+              // This gives you a Google Access Token. You can use it to access the Google API.
+              var token = result.credential.accessToken;
+              // ...
+            }
+            // The signed-in user info.
+            var user = result.user;
+          }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+          });
+        }
+      </script>
+    </body>
+  </html>

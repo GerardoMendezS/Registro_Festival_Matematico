@@ -1,0 +1,89 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <div class="container">
+      <h4>¿Qué evento quieres registrar?</h4>        
+      </div>
+      
+      <form action="#" id="listanames">
+        <!--<p><input class="with-gap" name="group1" type="radio" id="test0"/><label id="ltest0" for="test0">.....</label></p>
+        <p><input class="with-gap" name="group1" type="radio" id="test1"/><label id="ltest1" for="test1">.....</label></p>
+        <p><input class="with-gap" name="group1" type="radio" id="test2"/><label id="ltest2" for="test2">.....</label></p>
+        <p><input class="with-gap" name="group1" type="radio" id="test3"/><label id="ltest3" for="test3">.....</label></p>
+        <p><input class="with-gap" name="group1" type="radio" id="test4"/><label id="ltest4" for="test4">.....</label></p>
+        <p><input class="with-gap" name="group1" type="radio" id="test5"/><label id="ltest5" for="test5">.....</label></p>
+        <p><input class="with-gap" name="group1" type="radio" id="test6"/><label id="ltest6" for="test6">.....</label></p>
+        <p><input class="with-gap" name="group1" type="radio" id="test7"/><label id="ltest7" for="test7">.....</label></p>-->
+      </form>
+      <p id="selección">...</p>
+
+      <a class="waves-effect waves-light btn" id="scan" onclick="escoger()">Escoger</a>
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+
+      <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAF3HsFHQk8hkgdxPqgSqiBjlQl-D0w26Q",
+          authDomain: "registrofestmat.firebaseapp.com",
+          databaseURL: "https://registrofestmat.firebaseio.com",
+          projectId: "registrofestmat",
+          storageBucket: "registrofestmat.appspot.com",
+          messagingSenderId: "357200751307"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script>
+            // Check browser support
+            if (typeof(Storage) !== "undefined") {
+                    localStorage.setItem("evento", "desconocido");   
+            };
+        </script>
+      <script type="text/javascript">
+        var names;
+        var text = "";
+        var rootRef = firebase.database().ref();
+        localStorage.setItem("rootRef",rootRef);
+
+        function escoger() {
+          var group = document.getElementsByName("group1");
+
+          for (var i = 0; i < group.length; i++) {
+            if(group[i].checked){
+              rootRef = firebase.database().ref().child(group[i]);
+              document.getElementById('selección').innerHTML = 'Has escogido  ' + rootRef;
+              localStorage.setItem("rootRef",rootRef);
+            }
+          }
+        };
+
+        //Crear base de datos
+        rootRef.once("value").then(function (snapshot) {
+          // body...
+          var data = snapshot.val();
+          names = Object.getOwnPropertyNames(data);
+          var text = "";
+
+          for (var i = 0; i < names.length; i++) {
+            text += '<p><input class="with-gap" name="group1" type="radio" id="test'+i+'" value="'+names[i]+'"/><label for="test'+i+'">'+names[i]+'</label></p>';
+          }
+          document.getElementById('listanames').innerHTML = text;
+        });
+
+        
+      </script>
+    </body>
+  </html>

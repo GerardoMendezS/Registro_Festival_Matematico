@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+       <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Registro Festival Matematico</title>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+        <link type="text/css" rel="stylesheet" href="css/mapa.css" media="screen,projection" />
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <div class="app">
+            <nav class="nav-extended">
+                <div class="nav-wrapper blue lighten-1">
+                    <a href="#" class="brand-logo center">Festival Matemático</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="evento.html">Evento</a></li>
+                        <li><a href="#">Configuración</a></li>
+                        <li><a href="presentes.html">Presentes</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="evento.html">Evento</a></li>
+                        <li><a href="#">Configuración</a></li>
+                        <li><a href="presentes.html">Presentes</a></li>
+                    </ul>
+                </div>
+                <div class="nav-content blue">
+                    <ul class="tabs tabs-transparent">
+                        <li class="tab"><a class="active" href="#Registro">Registro</a></li>
+                        <li class="tab"><a href="#Modificar">Modificar datos</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!--Sección para mostrar  los datos de los voluntarios-->
+            <div id="Registro" class="container">
+                <div class="row">
+                    <div class="col s11 offset-s1"><h4>Datos del voluntario</h4></div>
+                </div>
+                
+                <div class="section">
+                    <h6>Nombre</h6>
+                    <p id="Nombre">....</p>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                    <h6>Apellido paterno</h6>
+                    <p id="Paterno">....</p>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                    <h6>Apellido Materno</h6>
+                    <p id="Materno">....</p>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                    <h6>Actividad</h6>
+                    <p id="Actividad">....</p>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                    <h6>Email</h6>
+                    <p id="Email">....</p>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                    <h6>Playera</h6>
+                    <p id="Playera">....</p>
+                </div>
+                <div class="divider"></div>
+
+                <!--Espacios para la asistencia-->
+                <div class="row">
+                    <div class="col s4">
+                        <form action="#">
+                            <p>
+                                <input type="checkbox" id="viernesMat" disabled="disabled">
+                                <label for="viernesMat">Viernes Matutino</label>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="col s4">
+                        <form action="#">
+                            <p>
+                                <input type="checkbox" id="sabadoMat" disabled="disabled">
+                                <label for="sabadoMat">Sábado Matutino</label>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="col s4">
+                        <form action="#">
+                            <p>
+                                <input type="checkbox" id="domingoMat" disabled="disabled">
+                                <label for="domingoMat">Domingo Matutino</label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s4">
+                        <form action="#">
+                            <p>
+                                <input type="checkbox" id="viernesVes" disabled="disabled">
+                                <label for="viernesVes">Viernes Vespertino</label>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="col s4">
+                        <form action="#">
+                            <p>
+                                <input type="checkbox" id="sabadoVes" disabled="disabled">
+                                <label for="sabadoVes">Sábado Vespertino</label>
+                            </p>
+                        </form>
+                    </div>
+                    <div class="col s4">
+                        <form action="#">
+                            <p>
+                                <input type="checkbox" id="domingoVes" disabled="disabled">
+                                <label for="domingoVes">Domingo Vespertino</label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12"></div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="IDfield" class="materialize-textarea"></textarea>
+                        <label for="IDfield">Introduce tu código</label>
+                    </div>
+                </div>
+
+                <form action="#">
+                    <p>
+                      <input class="with-gap" name="group1" type="radio" id="selectEntrada" />
+                      <label for="selectEntrada">Entrada</label>
+                    </p>
+                    <p>
+                      <input class="with-gap" name="group1" type="radio" id="selectSalida" />
+                      <label for="selectSalida">Salida</label>
+                    </p>
+                    <p>
+                      <input class="with-gap" name="group1" type="radio" id="selectMostrar" />
+                      <label for="selectMostrar">Mostrar datos</label>
+                    </p>
+                </form>
+                <div class="row">
+                    <div class="col s12"></div>
+                </div>
+                <div class="row">
+                    <div class="col s12"></div>
+                </div>
+                <div class="row">
+                    <div class="col s12"></div>
+                </div>
+                <!--Boton flotante-->
+                <div class="fixed-action-btn">
+                    <a class="btn-floating btn-large red" id="scan" onclick="escanear()">
+                      <i class="large material-icons">select_all</i>
+                    </a>
+                </div>
+            </div>
+            <!--Sección para modificar datos de los voluntarios-->
+            <div id="Modificar" class="container">
+                <div class="row">
+                    <div class="col s8 offset-s4"><h4>Datos del voluntario</h4></div>
+                </div>
+                <div class="row">
+                    <div class="input-field s8">
+                        <input id="e_nombre" type="text" class="validate">
+                        <label for="e_nombre">Nombre</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field s8">
+                        <input id="e_nombre" type="text" class="validate">
+                        <label for="e_paterno">Apellido paterno</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field s8">
+                        <input id="e_materno" type="text" class="validate">
+                        <label for="e_materno">Apellido materno</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field s8">
+                        <input id="e_playera" type="text" class="validate">
+                        <label for="e_playera">Playera</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript">
+            // Initialize collapse button
+            $(".button-collapse").sideNav();
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyAF3HsFHQk8hkgdxPqgSqiBjlQl-D0w26Q",
+              authDomain: "registrofestmat.firebaseapp.com",
+              databaseURL: "https://registrofestmat.firebaseio.com",
+              projectId: "registrofestmat",
+              storageBucket: "registrofestmat.appspot.com",
+              messagingSenderId: "357200751307"
+            };
+            firebase.initializeApp(config);
+
+
+        //Crear base de datos
+        rootRef = firebase.database().ref("7Festival");
+        var base;
+
+        rootRef.on("value", function (snapshot) {
+          // body...
+          base = snapshot;
+        });
+        </script>
+    
+        <script type="text/javascript">
+            function escanear(){
+                
+                var ID = document.getElementById("IDfield").value;
+
+                if(ID != ""){
+
+                    llenarCampos(ID);
+                    registro(ID);
+                    document.getElementById("IDfield").value = "";
+
+                } else{
+
+                    cordova.plugins.barcodeScanner.scan(
+                        function (result) {
+                            llenarCampos(result.text);
+                            registro(result.text);
+                        },
+                        function (error) {
+                        alert("Scanning failed: " + error);
+                        }
+                    );    
+                }
+                
+            }
+
+            function llenarCampos(ID){
+                //Llenar información
+                    document.getElementById('Nombre').innerHTML = base.child(ID).child("nombre").val();
+
+                    if(base.child(ID).child("extra/Capacitado").val() == 'Sí'){
+                        document.getElementById('Nombre').style.color = "green";    
+                    } else{
+                        document.getElementById('Nombre').style.color = "red";
+                    }
+
+                    document.getElementById('Paterno').innerHTML = base.child(ID).child("apaterno").val();
+                    document.getElementById('Materno').innerHTML = base.child(ID).child("amaterno").val();
+                    document.getElementById('Actividad').innerHTML = base.child(ID).child("actividad").val();
+                    document.getElementById('Playera').innerHTML = base.child(ID).child("playera").val();
+
+                    if(base.child(ID).child("extra/Entrega").val() == 'No'){
+                        document.getElementById('Playera').style.color = "green";    
+                    } else{
+                        document.getElementById('Playera').style.color = "red";
+                    }
+                    
+                    document.getElementById('Email').innerHTML = base.child(ID).child("email").val();
+
+                    //Llenar horarios
+                    var horarios = base.child(ID).child("turnos");
+
+                    document.getElementById('viernesMat').checked = (horarios.child('VM').val() == "Sí"); 
+                    document.getElementById('viernesVes').checked = (horarios.child('VV').val() == "Sí");
+                    document.getElementById('sabadoMat').checked = (horarios.child('SM').val() == "Sí");
+                    document.getElementById('sabadoVes').checked = (horarios.child('SV').val() == "Sí");
+                    document.getElementById('domingoMat').checked = (horarios.child('DM').val() == "Sí");
+                    document.getElementById('domingoVes').checked = (horarios.child('DV').val() == "Sí");
+            }
+
+            function registro(ID){
+                var fecha = new Date();
+                var dia = (fecha.getMonth()+1)+"-"+fecha.getDate();
+                var hora;
+
+                if(fecha.getMinutes() < 10){
+                    hora = fecha.getHours()+":0"+fecha.getMinutes();    
+                } else {
+                    hora = fecha.getHours()+":"+fecha.getMinutes();
+                }
+
+                 
+
+                if (document.getElementById('selectSalida').checked) {
+
+                    rootRef.child(ID).child(dia).update({salida : hora});
+
+                    //rootRef.child(ID).set({nombre : 'Gerardo Rubén', apaterno : 'Méndez', amaterno : 'Sánchez', email : 'gerardmen04@gmail.com', referencia : 'Fuera', actividad : '4. Miscelánea', playera : 'Mediana', turnos :{VM:'Sí', VV:'Sí', SM:'Sí', SV:'Sí', DM:'Sí', DV:'Sí'}});
+                    Materialize.toast("Salida " + hora, 3000);
+
+                    var k = base.child("Presentes").val();
+                    rootRef.update({Presentes: k-1});  
+
+                } else if(document.getElementById('selectEntrada').checked){
+
+                    rootRef.child(ID).child(dia).update({entrada : hora});
+                    rootRef.child(ID).child("extra").update({Entrega : 'Sí'});
+                    Materialize.toast("Entrada " + hora, 3000);
+
+                    var k = base.child("Presentes").val();
+                    rootRef.update({Presentes: k+1});
+                } else {
+                    Materialize.toast("Solo se muestran los datos", 3000);
+                }
+                
+                
+            }
+        </script>
+         
+    </body>
+</html>
